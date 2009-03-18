@@ -152,9 +152,9 @@
 	\centerline{\includegraphics[width=3.5in]{weighted_ex_1.pdf}}
 	\begin{itemize}
 	\item
-		What is the shortest path from A to D?
+		What is the shortest path from $A$ to $D$?
 	\item
-		ABCD
+		$ABCD$
 	\end{itemize}
 \end{frame}
 
@@ -251,21 +251,84 @@
 \end{frame}
 
 \section{Dijkstra's Algorithm}
-\subsection{Description}
+\subsection{Example}
 
-\begin{frame}{History}
+\begin{frame}{Description}
 \begin{itemize}
 \item
 	Discovered by Dutch mathematician Edsger Dijkstra (1930-2002) in 1959.
+\item
+	Find the length of a shortest path from the starting point to successive vertices until the terminal vertex is reached.
 \end{itemize}
 \end{frame}
 
-\subsection{Example}
-\subsection{Python Code}
+%% New Example
+\begin{frame}{A to Z}
+	\centerline{\includegraphics[width=3.5in]{weighted_ex_2.pdf}}
+	\begin{itemize}
+	\item
+		Start with a, find the next nearest vertex.
+	\item
+		Length of ab is 4, length of ad is 2.
+	\item
+		d is the nearest vertex.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{A to Z}
+	\centerline{\includegraphics[width=3.5in]{weighted_ex_2.pdf}}
+	\begin{itemize}
+	\item
+		Find the next nearest vertex by checking all paths that go through only a and d.
+	\item
+		The shortest path to b is still ab, with a length of 4.
+	\item
+		The shortest path to e is ade, length 5.
+	\item
+		b is the nearest vertex.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{A to Z}
+	\centerline{\includegraphics[width=3.5in]{weighted_ex_2.pdf}}
+	\begin{itemize}
+	\item
+		We now find the third nearest vertex (checking only paths that go through a, d, and b)
+	\item
+		c can be reached by abc, and has length 7.
+	\item
+		adez has a length of 6.
+	\item
+		z is the next closest to a, and has a shortest path of length 6.
+	\end{itemize}
+\end{frame}
+
+\subsection{Pseudo Code}
 \subsection{Practice}
 
 \section{The Traveling Salesman Problem}
 \subsection{Description}
+\begin{frame}
+	\begin{itemize}
+	\item
+		The \alert{traveling salesman problem} asks for a circuit of minimum total weight in a weighted, complete, undirected graph that visits each vertex exactly once and returns to its starting point.
+	\item
+		Applications in transportation, shipping, etc.
+	\item
+		The most 'straightforward' method is to examine all Hamilton circuits and select the one with least total length.
+	\item
+		Very difficult
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Approximation Algorithm}
+	\begin{itemize}
+	\item
+		An \alert{approximation algorithm} is one that does not neccesarily produce the exact solution to the problem, but one that is deemed close to an exact solution.
+	\item
+		For instance, an approximation algorithm might produce a Hamilton circuit of weight $W'$ such that $W \leq W' \leq cW$, where $W$ is the length of an exact solution and $c$ is a constant.
+	\end{itemize}
+\end{frame}
 \begin{frame}{XKCD}
 \centerline{\includegraphics[width=3.5in]{travelling_salesman_problem.png}}
 \end{frame}
